@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> </title>
+        
+    </head>
+    <body>
+        <div id="content">
+            {% for item in data %}
+               <img src="{{ data.smallPath }}" alt="{{data.Name}}" >  
+            {% endfor %}
+        </div>
+        <form action="server.php" method="post" enctype="multipart/form-data">
+            <p> Select a file</p>
+            <input type = "file" name = "photo"><br>
+            <br>
+        <input type="submit">
+    </form>
+    </body>
+</html>
