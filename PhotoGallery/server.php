@@ -9,9 +9,9 @@ if(!empty($_POST['photo'])){
     $db = new DB('localhost','root', '', 'Photogallery');
     $db -> connection();
     $img = new Image();
-    $img -> upload();
+    $img ->  upload();
     
 }
  else {
     echo 'POST is empty';
-}
+}  

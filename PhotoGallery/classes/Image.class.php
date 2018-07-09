@@ -63,20 +63,21 @@ class Image{
           
     }
     public function show(){
-        $connect = mysqli_connect("localhost", "root", "", "HW5");//Подключаемся к базе
+        $db = new DB("localhost", "root", "", "Photogallery");//Подключаемся к базе
+        $db ->connection();
+        
         $sqlGetData = "SELECT * From img ORDER BY 'num' DESC";//Запрос на чтение
-                    $res = mysqli_query($connect, $sqlGetData);//Читаем данные из таблицы
+        $db ->sqlQuery($sqlGetData);//Читаем данные из таблицы
+        while ($data = mysqli_fetch_assoc($res))
+        {
 
-                    while ($data = mysqli_fetch_assoc($res))
-                    {
-
-                        echo "<figure>
-                            <a href=\"view.php?id={$data['Id']}\" target=\"_self\">
-                            <img src=\"{$data['smallPath']}\" alt=\"{$data['Name']}\" >
-                            </a>
-                            <figcaption>Просмотров: {$data['num']}</figcaption>
-                            </figure>";
-                    }
+            echo "<figure>
+            <a href=\"view.php?id={$data['Id']}\" target=\"_self\">
+            <img src=\"{$data['smallPath']}\" alt=\"{$data['Name']}\" >
+            </a>
+            <figcaption>Просмотров: {$data['num']}</figcaption>
+            </figure>";
+        }
 
                 
     }

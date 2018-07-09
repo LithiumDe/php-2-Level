@@ -16,10 +16,10 @@ try {
     {
                   
         echo "<figure>
-        <a href=\"view.php?id={$data['Id']}\" target=\"_self\">
+        <a href=\"photos.php?id={$data['Id']}\" target=\"_self\">
         <img src=\"{$data['smallPath']}\" alt=\"{$data['Name']}\" >
         </a>
-        <figcaption>Просмотров: {$data['num']}</figcaption>
+     
         </figure>";
     }
     // указывае где хранятся шаблоны
