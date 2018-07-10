@@ -5,7 +5,8 @@ require_once 'classes/Image.class.php';
 
 
 
-if(!empty($_POST['photo'])){
+if(isset($_POST['photo'])){
+    print_r($_POST['photo']) ;
     $db = new DB('localhost','root', '', 'Photogallery');
     $db -> connection();
     $img = new Image();

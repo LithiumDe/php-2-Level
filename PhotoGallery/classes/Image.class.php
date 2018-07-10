@@ -36,7 +36,7 @@ class Image{
         $newName = 'pic_' . time() . '.jpg';
         $smallTargetDir = SMALLPATH.$newName;
     
-        print_r($fileType);
+      
         if ($fileType == 'image/jpeg') //Проверка на тип загружаемого изображения
         {
             if(move_uploaded_file($fileTmp, $path)) //загружаем файл в целевую папку
