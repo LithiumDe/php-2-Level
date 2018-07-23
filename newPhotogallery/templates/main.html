@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href = '../public/css/style.css'>
+    </head>
+    <body>
+        <div class="gallery">
+            
+            {% for item in data %}
+            <div class="small_photo"><a href='photos.php?id={{item.Id}}'>
+                    <img src='{{ item.smallPath }}' alt='{{item.Name}}' >  
+                </a>
+            </div>
+               
+            {% endfor %}
+        </div>
+        
+        <form action = 'upload.php' method = "post" enctype="multipart/form-data">
+            <p> Select a file</p>
+            <input type = "file" name = "photo"><br>
+            <br>
+        <input type = "submit" >
+    </form>
+    </body>
+</html>
